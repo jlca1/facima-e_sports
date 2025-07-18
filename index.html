@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição Facima E-Sports</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="img/logofacima.jfif" alt="Logo Facima E-Sports" class="event-logo">
+                <div>
+                    <h1>Facima E-Sports</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h2>Participe do nosso evento de jogos!</h2>
+                <p>Prepare-se para competir, se divertir e mostrar suas habilidades nos games. Preencha o formulário abaixo para garantir sua vaga!</p>
+            </div>
+        </section>
+
+        <section id="formulario">
+            <div class="container">
+                <h2>Formulário de Inscrição</h2>
+                <form action="https://formsubmit.co/f8cc1647292c5a8432d0262b257059bf" method="POST">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefone">Telefone (com DDD):</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="faculdade">Você é aluno(a) da Facima?</label>
+                        <select id="faculdade" name="faculdade" required>
+                            <option value="">Selecione</option>
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jogos">Em quais jogos você tem interesse em competir?</label>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="lol" name="jogos[]" value="League of Legends">
+                            <label for="lol">League of Legends (LoL)</label><br>
+
+                            <input type="checkbox" id="csgo" name="jogos[]" value="CS:GO">
+                            <label for="csgo">Counter-Strike 2 (CS2)</label><br>
+
+                            <input type="checkbox" id="valorant" name="jogos[]" value="Valorant">
+                            <label for="valorant">Valorant</label><br>
+
+                            <input type="checkbox" id="fifa" name="jogos[]" value="FIFA">
+                            <label for="fifa">EA Sports FC (FIFA)</label><br>
+
+                            <input type="checkbox" id="others" name="jogos[]" value="Outros">
+                            <label for="others">Outros (especifique abaixo)</label><br>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="outros-jogos-field" style="display: none;">
+                        <label for="outros_jogos_txt">Quais outros jogos?</label>
+                        <input type="text" id="outros_jogos_txt" name="outros_jogos_txt">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensagem">Alguma observação ou pergunta?</label>
+                        <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+                    </div>
+                     <input type="hidden" name="_next" value="http://127.0.0.1:5500/agradecimento.html">
+                    <button type="submit">Inscrever-se</button>
+                </form>
+                <input type="hidden" name="_next" value="https://seusite.com/obrigado.html">
+
+                <input type="hidden" name="_subject" value="Nova Inscrição - Facima E-Sports!">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Facima E-Sports. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Lógica para mostrar/esconder o campo "Outros jogos"
+        const outrosCheckbox = document.getElementById('others');
+        const outrosJogosField = document.getElementById('outros-jogos-field');
+
+        outrosCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                outrosJogosField.style.display = 'block';
+            } else {
+                outrosJogosField.style.display = 'none';
+                document.getElementById('outros_jogos_txt').value = ''; // Limpa o campo se desmarcado
+            }
+        });
+    </script>
+</body>
+</html>
